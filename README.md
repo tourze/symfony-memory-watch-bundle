@@ -34,20 +34,6 @@ return [
 ];
 ```
 
-## Quick Start
-
-The bundle works automatically after installation, monitoring memory usage with a default threshold of 50MB.
-
-You can customize the memory threshold by creating a bundle configuration file:
-
-```yaml
-# config/packages/memory_watch.yaml
-services:
-  Tourze\MemoryWatchBundle\EventSubscriber\MemoryWatchSubscriber:
-    properties:
-      memoryThresholdMB: 100 # Set your custom threshold in MB
-```
-
 ## How It Works
 
 The bundle uses an event subscriber to:

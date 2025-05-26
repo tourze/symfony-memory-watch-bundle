@@ -34,20 +34,6 @@ return [
 ];
 ```
 
-## 快速开始
-
-安装后，扩展包会自动工作，默认内存阈值为50MB。
-
-你可以通过创建扩展包配置文件来自定义内存阈值：
-
-```yaml
-# config/packages/memory_watch.yaml
-services:
-  Tourze\MemoryWatchBundle\EventSubscriber\MemoryWatchSubscriber:
-    properties:
-      memoryThresholdMB: 100 # 设置自定义阈值，单位为MB
-```
-
 ## 工作原理
 
 该扩展包使用事件订阅器来：
