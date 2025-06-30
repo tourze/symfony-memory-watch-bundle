@@ -40,7 +40,7 @@ class MemoryWatchSubscriber
             return;
         }
 
-        $startMemoryUsage = $this->requestContext->offsetGet($request) ?: 0;
+        $startMemoryUsage = $this->requestContext->offsetGet($request) ?? 0;
         $endMemoryUsage = memory_get_usage();
         $memoryUsed = $endMemoryUsage - $startMemoryUsage;
 
