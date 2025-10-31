@@ -1,18 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tourze\MemoryWatchBundle\Tests;
 
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 use Tourze\MemoryWatchBundle\MemoryWatchBundle;
+use Tourze\PHPUnitSymfonyKernelTest\AbstractBundleTestCase;
 
-class MemoryWatchBundleTest extends TestCase
+/**
+ * @internal
+ */
+#[CoversClass(MemoryWatchBundle::class)]
+#[RunTestsInSeparateProcesses]
+final class MemoryWatchBundleTest extends AbstractBundleTestCase
 {
-    /**
-     * 测试 Bundle 实例化
-     */
-    public function testBundleInstantiation(): void
-    {
-        $bundle = new MemoryWatchBundle();
-        $this->assertInstanceOf(MemoryWatchBundle::class, $bundle);
-    }
 }

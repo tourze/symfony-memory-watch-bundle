@@ -2,12 +2,17 @@
 
 namespace Tourze\MemoryWatchBundle\Tests\DependencyInjection;
 
-use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Tourze\MemoryWatchBundle\DependencyInjection\MemoryWatchExtension;
 use Tourze\MemoryWatchBundle\EventSubscriber\MemoryWatchSubscriber;
+use Tourze\PHPUnitSymfonyUnitTest\AbstractDependencyInjectionExtensionTestCase;
 
-class MemoryWatchExtensionTest extends TestCase
+/**
+ * @internal
+ */
+#[CoversClass(MemoryWatchExtension::class)]
+final class MemoryWatchExtensionTest extends AbstractDependencyInjectionExtensionTestCase
 {
     /**
      * 测试配置加载
@@ -15,6 +20,7 @@ class MemoryWatchExtensionTest extends TestCase
     public function testLoadConfiguration(): void
     {
         $container = new ContainerBuilder();
+        $container->setParameter('kernel.environment', 'test');
         $extension = new MemoryWatchExtension();
         $extension->load([], $container);
 

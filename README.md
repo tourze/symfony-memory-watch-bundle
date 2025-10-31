@@ -34,6 +34,22 @@ return [
 ];
 ```
 
+## Quick Start
+
+After installation, the bundle is ready to use with zero configuration. It will automatically:
+
+1. **Monitor memory usage** - Track memory consumption for each request
+2. **Log warnings** - Alert when memory usage exceeds 50MB threshold
+3. **Clean up automatically** - Use WeakMap to prevent memory leaks
+
+The bundle logs to your application's default logger when memory usage exceeds the threshold. Check your logs to see output like:
+
+```
+[2024-01-01 12:00:00] app.WARNING: 内存使用超过阈值 {"使用内存":75.5,"内存阈值":"50MB"}
+```
+
+No additional configuration is required - the bundle works out of the box.
+
 ## How It Works
 
 The bundle uses an event subscriber to:
